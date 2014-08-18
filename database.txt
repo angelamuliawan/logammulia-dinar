@@ -1,0 +1,271 @@
+Database Yang dibutuhkan
+
+Project Name : Tamar Gold Shop
+pakai database prefix : tgs (tamar gold shop)
+
+    - tgs_user :
+        - id_user
+        - username
+        - password
+        - email
+        - name
+        - address
+        - gender :
+            - 1 : male
+            - 2 : female
+        - date_register
+        - date_login
+        - activate_key
+        - status_user :
+            - 1 : aktif
+            - 0 : belum aktif
+        - image_user
+        - account_number (nomor rekening)
+        - atas_nama
+        - no_hp
+    - tgs_administrator :
+        - id_administrator
+        - username
+        - password
+        - email
+        - admin_superadmin :
+            - 0 : back office
+            - 1 : admin biasa
+            - 2 : super admin
+        - date_register
+        - date_login
+        - activate_key
+    - tgs_product :
+        - id_product
+        - name_product
+        - image_product
+        - description_product
+        - stock
+        - base_price
+        - margin
+        - sell_price
+        - date_insert
+    - tgs_stock :
+        - id_stock
+        - id_product
+        - stock_tambahan
+        - status_stock :
+            1 : Belum Dikonfirmasi Admin
+            2 : Sudah Dikonfirmasi Admin
+        - date_stock
+    - tgs_comment
+        - id_comment
+        - id_news
+        - id_user
+		- name_comment
+		- email_comment
+        - comment
+        - date_comment
+		- status_comment
+			1 : Not Moderated
+			2 : Publish
+			3 : Spam
+    - tgs_news
+        - id_news
+        - title_news
+        - contain_news
+        - date_insert
+        - date_update
+        - status_news :
+            1 : nonactive
+            2 : avtive
+        - id_user
+    - tgs_order :
+        - id_order
+        - id_user
+        - id_product
+        - date_order
+        - qty
+        - total_price
+        - cicilan :
+            1 : cash
+            2 : nyicil
+        - shipping (kalo cicilannya cash) :
+            1 : COD
+            2 : Delivery
+        - status_oder :
+            1 : Unpaid
+            2 : Paid
+            3 : Paid (Confirmation)
+            4 : Dikirim
+            5 : Batal (Dibatalkan)
+    - tgs_order_nonmember (buat yang order delivery cash nggak daftar)
+        - id_order_nonmember
+        - id_product
+        - name
+        - email
+        - phone_number
+        - address
+        - qty
+        - total_price
+        - account_number
+        - atas_nama
+		- date_order
+		- status_order :
+			1 : Unpaid
+            2 : Paid
+            3 : Dikirim
+            4 : Terkirim
+            5 : Batal (Dibatalkan)
+		- shipping:
+            1 : COD
+            2 : Delivery
+    - tgs_cicilan :
+        - id_cicilan
+        - id_user
+        - id_product
+        - jangka_waktu
+        - harga_pas_beli
+		- biaya_titip
+        - total_biaya
+        - status_transfer :
+            1 : Belum Lunas
+            2 : Sudah Lunas
+            3 : Barang Dikirim
+        - total_denda
+	- tgs_cicilan_detail :
+		- id_cicilan
+		- id_cicilan_detail
+		- date_jatuh_tempo
+		- date_terbayar
+		- status_cicilan :
+            1 : Belum Transfer
+            2 : Sudah Transfer
+            3 : Terkonfirmasi Transfer
+		- cannot_pay :
+			- 1 : Nggak Bisa Bayar
+			- 0 : Belum Bayar / Bisa Bayar
+		
+    - tgs_setting :
+        - id_setting
+        - title_website
+        - description_website
+        - company_profile
+        - mou_akad_celengan
+        - mou_akad_arisan
+        - mou_akad_gadai
+        - no_account (nomor rekening admin)
+        - email_website
+        - under_maintennace :
+            - 1 : No
+            - 2 : Yes
+        - margin_default
+        - footer
+        - cara_transaksi
+    - tgs_celengan
+        - id_celengan
+        - id_user
+        - total_balance
+        - date_celengan
+        - status_celengan :
+			1 : Active
+			0 : Nonactive
+	- tgs_celengan_detail
+        - id_celengan_detail
+        - id_celengan
+        - balance
+        - date_celengan_detail
+        - status_celengan_detail :
+			7 : Convert dari Emas
+			6 : Batal Dicairkan
+			5 : Batal Transfer
+			4 : Dicairkan (Transfer)
+			3 : Dicairkan (Not Yet Transfer)
+			2 : Dipakai Beli Emas
+			1 : Sudah Transfer
+			0 : Belum Transfer
+	- tgs_celengan_emas
+		- id_celengan_emas
+		- id_celengan
+		- id_product
+		- harga_pas_beli
+		- qty
+		- date_celengan_emas
+		- status_celengan_emas :
+			- 1 : dibeli
+			- 2 : dilepas (ditransfer ke saldo)
+    - tgs_simpan
+		- id_simpan
+		- id_user
+		- date_simpan
+		- date_akhir
+		- status_simpan
+			2 : Belum Bayar
+			1 : Aktif
+			0 : Nonaktif
+	- tgs_simpan_emas
+		- id_simpan_emas
+		- id_simpan
+		- id_product
+		- qty
+	- tgs_simpan_detail
+		- id_simpan_detail
+		- id_simpan
+		- id_product
+		- date_simpan_detail
+		- status_simpan_detail :
+			- 1 : Mengajukkan Simpan
+			- 2 : Disimpan
+			- 3 : Mengajukkan Lepas
+			- 4 : Dilepas
+	- tgs_konsultasi
+        - id_konsultasi
+        - id_user
+        - subject
+        - konsultasi
+        - date_konsultasi
+        - status_konsultasi :
+			1 : Belum Dibaca
+			2 : Sudah Dibaca
+			3 : Dibalas
+    - tgs_jawab_konsultasi
+        - id_jawab
+        - id_konsultasi
+        - id_backoffice
+        - jawaban
+        - date_jawab
+    - tgs_slideshow
+        - id_slideshow
+        - title_slideshow
+        - link_url
+        - image_slideshow
+        - status_slideshow :
+            - 1 : Draft
+            - 2 : Active
+        - sort_oder
+        - date_slideshow
+	- tgs_jual
+		- id_jual
+		- id_user
+		- id_product
+		- qty
+		- date_jual
+		- status_jual :
+			- 1 : Mengajukkan Penjualan
+			- 2 : Product Terjual
+			- 3 : Batal
+	- tgs_links
+		- id_links
+		- title_links
+		- links
+		- sort_order
+		- status_links
+			- 1 : Active
+			- 2 : Nonactive
+	- tgs_gadai
+		- id_gadai
+		- id_user
+		- gram_gadai
+		- nilai_taksiran
+		- jangka_waktu
+		- pinjaman
+		- cicilan_lunas
+		- date_gadai
+		- status_gadai :
+			1 : Tergadaikan
+			2 : Ditebus

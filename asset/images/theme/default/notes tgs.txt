@@ -1,0 +1,15 @@
+to do list & Bug
+- update last login untuk adminpanel dan user
+- nggak bisa hapus produk, user jika masih ada idnya di table order
+- stock berkurang jika ada yang order
+- nggak bisa order kalau stock not ready (khusus yang cash)
+- rapihkan breadcrumbs frontpage (margin) (y)
+- ada user konfirmasi pembayaran, notification email ke admin
+- dikirim kapan (utk ordernya delivery)
+- Edit Transfer Rekening waktu konfirmasi order form (y)
+- edit status cicilan blm selesai (adminpanel)
+- Validsai konfirmasi hanya bisa sekali. (y)
+
+Antony's list to do:
+- rapihin validasi Form Order
+- rapihin validasinya  Kirim Konsultasi 
