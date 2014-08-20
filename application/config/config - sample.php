@@ -15,6 +15,7 @@
 |
 */
 $config['base_url']	= 'http://logammulia-dinar.com/';
+$config['base_url']	= 'http://localhost:8080/logammulia-dinar';
 //$config['base_url']	= 'http://tamartest.zz.mu';
 date_default_timezone_set('Asia/Jakarta');
 /*
